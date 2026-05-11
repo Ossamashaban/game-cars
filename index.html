@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberRace 3D - لعبة سباق السيارات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #00ff88;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 30px;
+            background: rgba(20, 30, 60, 0.9);
+            border-radius: 15px;
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff00ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px #ff00ff;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #00ff88;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px #00ff88;
+        }
+
+        .feature-list {
+            text-align: right;
+            margin: 30px 0;
+            color: #00ff88;
+        }
+
+        .feature-list h2 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #ff00ff;
+        }
+
+        .feature-list ul {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #ff00ff;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .btn-container {
+            margin: 30px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            margin: 10px;
+            background: linear-gradient(135deg, #00ff88 0%, #ff00ff 100%);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+        }
+
+        .controls {
+            text-align: right;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .controls h3 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .control-item {
+            margin: 10px 0;
+            text-align: right;
+        }
+
+        .key {
+            display: inline-block;
+            background: #ff00ff;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 255, 136, 0.2);
+            font-size: 0.9em;
+            color: #00ff88;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: rgba(0, 255, 136, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #00ff88;
+        }
+
+        .stat-label {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+
+        .stat-value {
+            color: #00ff88;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏎️ CyberRace 3D</h1>
+        <p class="subtitle">لعبة سباق السيارات النهائية</p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-label">حجم اللعبة</div>
+                <div class="stat-value">49 KB</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">أسطر الكود</div>
+                <div class="stat-value">~2,500</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">السيارات</div>
+                <div class="stat-value">4</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">مستويات الصعوبة</div>
+                <div class="stat-value">3</div>
+            </div>
+        </div>
+
+        <div class="feature-list">
+            <h2>المميزات الرئيسية</h2>
+            <ul>
+                <li>لعبة سباق سيارات ثنائية الأبعاد بمنظور ثلاثي الأبعاد</li>
+                <li>تحكم سلس باستخدام لوحة المفاتيح أو اللمس</li>
+                <li>نظام ذكاء اصطناعي للسيارات الأخرى</li>
+                <li>نظام نيترو قوي مع تأثيرات بصرية</li>
+                <li>أصوات واقعية مع Web Audio API</li>
+                <li>تأثيرات جسيمات وهزة كاميرا</li>
+                <li>نظام جمع العملات</li>
+                <li>حفظ أعلى نقاط في ذاكرة المتصفح</li>
+                <li>ظروف طقس ديناميكية (مطر، ليل، ضباب)</li>
+                <li>خريطة صغيرة في الوقت الفعلي</li>
+            </ul>
+        </div>
+
+        <div class="controls">
+            <h3>🎮 التحكم</h3>
+            <div class="control-item">
+                <span>التسارع:</span>
+                <span class="key">⬆️ / W</span>
+            </div>
+            <div class="control-item">
+                <span>الكبح:</span>
+                <span class="key">⬇️ / S</span>
+            </div>
+            <div class="control-item">
+                <span>اليمين:</span>
+                <span class="key">➡️ / D</span>
+            </div>
+            <div class="control-item">
+                <span>اليسار:</span>
+                <span class="key">⬅️ / A</span>
+            </div>
+            <div class="control-item">
+                <span>النيترو:</span>
+                <span class="key">Shift</span>
+            </div>
+            <div class="control-item">
+                <span>إيقاف:</span>
+                <span class="key">Space</span>
+            </div>
+            <div class="control-item">
+                <span>الطقس:</span>
+                <span class="key">N</span>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="racing-game.html" class="btn">🚀 ابدأ اللعبة</a>
+        </div>
+
+        <div class="footer">
+            <p>🏎️ CyberRace 3D - لعبة سباق السيارات الحديثة</p>
+            <p>مبنية بـ HTML5 و CSS3 و JavaScript النقي</p>
+            <p>© 2026 Ossamashaban</p>
+        </div>
+    </div>
+</body>
+</html>
